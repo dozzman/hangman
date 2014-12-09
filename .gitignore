@@ -1,0 +1,11 @@
+hangman/build
+hangman/dist
+hangman/build.properties
+
+tomcat_start.sh
+apache-tomcat-8.0.15/
+
+*.swp
+*.class
+*.jar
+*.war
