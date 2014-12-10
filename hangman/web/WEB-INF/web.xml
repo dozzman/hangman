@@ -5,11 +5,11 @@
 <description>Little hangman game for Nexmo</description>
     <servlet>
         <servlet-name>hangman</servlet-name>
-        <servlet-class>hangman.Hangman</servlet-class>
+        <servlet-class>hangman.HangmanController</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>hangman</servlet-name>
-        <url-pattern>/hangman</url-pattern>
+        <url-pattern>/hangmanController</url-pattern>
     </servlet-mapping>
 </web-app>

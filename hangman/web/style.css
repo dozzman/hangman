@@ -1,0 +1,48 @@
+#intro {
+    /* nothing interesting here */
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+#game {
+    /* nor here */
+    display: none;
+    opacity: 0;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+}
+
+.guessLetter {
+    font-size: 60px;
+}
+
+#letterGrid {
+    left: 0px;
+    right: 0px;
+}
+
+#hangmanImageContainer {
+    left: 0px;
+    right: 0px;
+}
+
+.hangmanImage {
+    position: absolute;
+}
+
+#guessWord {
+    left: 0px;
+    right: 0px;
+    text-align: center;
+}
+
+#guessWord u {
+    font-size: 80px;
+}

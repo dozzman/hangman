@@ -1,9 +1,56 @@
 <html>
-<head>
-<title>index page</title>
-</head>
-<body>
-<h1 align="center">Congrats!</h1>
-<h3 align="center">The index page works! Try <a href="./hangman">this link</a> to see if hangman is working</h3>
-</body>
+    <head>
+        <title>index page</title>
+        <script src="controller.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <section id="intro">
+            <h1 align="center">Hangman!</h1>
+            <a align="center" onClick="loadGame()">Lets Go!</a>
+        </section>
+        <section id="game">
+            <h1 align="center">THIS IS THE GAME!</h1>
+            <div id="hangmanImageContainer">
+                <img class="hangmanImage" src="hm1.png"/>
+                <img class="hangmanImage" src="hm2.png"/>
+                <img class="hangmanImage" src="hm3.png"/>
+            </div>
+            <div id="guessWord">
+                <u>h</u> <u>e</u> <u>l</u> <u>l</u> <u>o</u>
+            </div>
+            <div id="letterGrid" align="center">
+                collection of letters goes here</br>
+                <a class="guessLetter" onClick="guess('A', this)">A</a>
+                <a class="guessLetter" onClick="guess('B', this)">B</a>
+                <a class="guessLetter" onClick="guess('C', this)">C</a>
+                <a class="guessLetter" onClick="guess('D', this)">D</a>
+                <a class="guessLetter" onClick="guess('E', this)">E</a>
+                <a class="guessLetter" onClick="guess('F', this)">F</a>
+                <a class="guessLetter" onClick="guess('G', this)">G</a>
+                <a class="guessLetter" onClick="guess('H', this)">H</a>
+                <a class="guessLetter" onClick="guess('I', this)">I</a>
+                <a class="guessLetter" onClick="guess('J', this)">J</a>
+                <a class="guessLetter" onClick="guess('K', this)">K</a>
+                <a class="guessLetter" onClick="guess('L', this)">L</a>
+                <a class="guessLetter" onClick="guess('M', this)">M</a>
+                <a class="guessLetter" onClick="guess('N', this)">N</a>
+                <a class="guessLetter" onClick="guess('O', this)">O</a>
+                <a class="guessLetter" onClick="guess('P', this)">P</a>
+                <a class="guessLetter" onClick="guess('Q', this)">Q</a>
+                <a class="guessLetter" onClick="guess('R', this)">R</a>
+                <a class="guessLetter" onClick="guess('S', this)">S</a>
+                <a class="guessLetter" onClick="guess('T', this)">T</a>
+                <a class="guessLetter" onClick="guess('U', this)">U</a>
+                <a class="guessLetter" onClick="guess('V', this)">V</a>
+                <a class="guessLetter" onClick="guess('W', this)">W</a>
+                <a class="guessLetter" onClick="guess('X', this)">X</a>
+                <a class="guessLetter" onClick="guess('Y', this)">Y</a>
+                <a class="guessLetter" onClick="guess('Z', this)">Z</a>
+            </div>
+            <div><a href="hangmanController?current_games">check out the other players words!</a></div>
+        </section>
+    </body>
 </html>
