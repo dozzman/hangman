@@ -9,20 +9,25 @@
     <body>
         <section id="intro">
             <h1 align="center">Hangman!</h1>
-            <a align="center" onClick="loadGame()">Lets Go!</a>
+            <h2 align="center" onClick="loadGame()">Lets Go!</h2>
         </section>
         <section id="game">
             <h1 align="center">THIS IS THE GAME!</h1>
             <div id="hangmanImageContainer">
-                <img class="hangmanImage" src="hm1.png"/>
-                <img class="hangmanImage" src="hm2.png"/>
-                <img class="hangmanImage" src="hm3.png"/>
+                <img class="hangmanImage" src="images/hm0.png"/>
+                <img class="hangmanImage" src="images/hm1.png"/>
+                <img class="hangmanImage" src="images/hm2.png"/>
+                <img class="hangmanImage" src="images/hm3.png"/>
+                <img class="hangmanImage" src="images/hm4.png"/>
+                <img class="hangmanImage" src="images/hm5.png"/>
+                <img class="hangmanImage" src="images/hm6.png"/>
+                <img class="hangmanImage" src="images/hm7.png"/>
+                <img class="hangmanImage" src="images/hm8.png"/>
             </div>
             <div id="guessWord">
                 <u>h</u> <u>e</u> <u>l</u> <u>l</u> <u>o</u>
             </div>
             <div id="letterGrid" align="center">
-                collection of letters goes here</br>
                 <a class="guessLetter" onClick="guess('A', this)">A</a>
                 <a class="guessLetter" onClick="guess('B', this)">B</a>
                 <a class="guessLetter" onClick="guess('C', this)">C</a>
@@ -51,6 +56,12 @@
                 <a class="guessLetter" onClick="guess('Z', this)">Z</a>
             </div>
             <div><a href="hangmanController?current_games">check out the other players words!</a></div>
+        </section>
+        <section id="win">
+            <h1 align="center">YOU WINNER YOU!!!</h1>
+        </section>
+        <section id="lose">
+            <h1 align="center">YOU LOSE.</h1>
         </section>
     </body>
 </html>

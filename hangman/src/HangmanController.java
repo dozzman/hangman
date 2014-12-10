@@ -12,6 +12,7 @@ public class HangmanController extends HttpServlet {
     public final static String GAME_STARTED_QUERY = "game_started";
     public final static String NEW_GAME_QUERY = "new_game";
     public final static String CURRENT_GAMES_QUERY = "current_games";
+    public final static String UPDATE_GUESSES_QUERY = "update_guesses";
     public final static int WORDS_IN_DICT = 127141;
     public ServletContext context = null;
 
@@ -57,6 +58,15 @@ public class HangmanController extends HttpServlet {
             }
 
             out.println("</body>");
+        } else if ( query.equals( UPDATE_GUESSES_QUERY ) ) {
+            HangmanGame game = currentSessions.get( sessionId );
+            for ( Cookie cookie : request.getCookies() ) {
+                if ( cookie.getName().equals("guessedLetters") ) {
+                    game.guessedLetters = cookie.getValue();
+                }
+            }
+
+            currentSessions.put( sessionId, game );
         }
 
         out.close();

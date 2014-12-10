@@ -31,10 +31,13 @@
 #hangmanImageContainer {
     left: 0px;
     right: 0px;
+    height: 400px;
 }
 
 .hangmanImage {
     position: absolute;
+    text-align: center;
+    display: none;
 }
 
 #guessWord {
@@ -45,4 +48,18 @@
 
 #guessWord u {
     font-size: 80px;
+}
+
+#win {
+    display: none;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+#lose {
+    display: none;
+    position: absolute;
+    left: 0px;
+    right: 0px;
 }

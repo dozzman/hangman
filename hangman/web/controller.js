@@ -24,7 +24,7 @@ function loadGame() {
     } else {
         word = $.cookie("word");
         guessedLetters = $.cookie("guessedLetters");
-        url += "game_started";//&word=" + word + "&guessedLetters=" + guessedLetters;
+        url += "game_started";
         var guessLetters = $(".guessLetter");
 
         for ( var i = 0; i < guessLetters.length; i++ ) {
@@ -64,7 +64,15 @@ function guess( letter, obj ) {
 function updateGame() {
     var htmlString = "";
     var wrong = 0;
+    var winner = true;
+    var loser = false;
+
     $.cookie("guessedLetters",guessedLetters, { expires : 365 } );
+    var req = new XMLHttpRequest();
+    var url = "hangmanController?update_guesses";
+
+    req.open( "GET", url, true );
+    req.send();
 
     for ( var i = 0; i < word.length; i++ ) {
         currentValue = " ";
@@ -73,20 +81,56 @@ function updateGame() {
                currentValue = word[i]; 
                break;
             }
+        }
 
-            if ( j == guessedLetters.length - 1 ) {
-                wrong++;
-            }
+        if ( currentValue == " " ) {
+            winner = false;
         }
 
         htmlString += "<u>" + currentValue +"</u>&nbsp;";
     }
 
-    $("#guessWord").html( htmlString );
+    for ( var i = 0; i < guessedLetters.length; i++ ) {
+        found = false;
+        for ( var j = 0; j < word.length; j++ ) {
+            if ( guessedLetters[i] == word[j] ) {
+                found = true;
+                break;
+            }
+        }
 
+        if ( found == false ) {
+            wrong++;
+        }
+    }
+
+    if ( wrong >= 9 ) {
+        loser = true;
+    }
+
+    $("#guessWord").html( htmlString );
     updateHangman( wrong );
+    
+    if ( winner ) {
+        $("#game").css("display", "none");
+        $("#win").css("display", "block");
+        clearCookies();
+    } else if ( loser ) {
+        $("#game").css("display", "none");
+        $("#lose").css("display", "block");
+        clearCookies();
+    }
 }
 
 function updateHangman( wrong ) {
+    var hmImages = $(".hangmanImage");
 
+    for( var i = 0; i < wrong; i++ ) {
+       $( hmImages[i] ).css("display", "block");
+    }
+}
+
+function clearCookies() {
+    $.removeCookie("word");
+    $.removeCookie("guessedLetters");
 }
